@@ -1,8 +1,9 @@
 # luci-theme-argon-dark-MOD
 
-syarat: harus sudah terinstall tema argon dan argon config terlebih dahulu
+NOTE: saya menggunakan firmware dari REYRE 22.03.5 dan utak atik secara manual, blm coba ke versi yg lain...
+mohon maaf apabila terjadi error...
 
-note: saya menggunakan firmware dari REYRE dan utak atik secara manual, mohon maaf apabila terjadi error
+syarat: harus sudah terinstall tema argon dan argon config terlebih dahulu
 
 1. buka file manager lalu hapus semua isi folder di /www/luci-static/argon/
 2. upload semua isi folder argon diatas ke /www/luci-static/argon/
