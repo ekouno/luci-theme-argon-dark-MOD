@@ -130,7 +130,17 @@ XHR.poll(3, '<%=url([[admin]], [[services]], [[zerotier]], [[status]])%>', null,
 );
 //]]>
 </script>
+<script type="text/javascript">//<![CDATA[
+$.get("http://ip-api.com/json", function (response) {
 
+    $("#ip").html("IP: " + response.query);
+
+    $("#address").html("Location: " + response.country + ", " + response.city);
+
+    $("#isp").html("ISP: " + response.isp);
+
+}, "jsonp");
+</script>	
 <script type="text/javascript">
 	L.require('ui').then(function(ui) {
 		ui.instantiateView('status/index');
