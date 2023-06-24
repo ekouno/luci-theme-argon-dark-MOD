@@ -2,7 +2,7 @@
 
 syarat: harus sudah terinstall tema argon dan argon config terlebih dahulu
 
-note: saya menggunakan firmware dari REYRE dan utak atik secara manual
+note: saya menggunakan firmware dari REYRE dan utak atik secara manual, mohon maaf apabila terjadi error
 
 1. buka file manager lalu hapus semua isi folder di /www/luci-static/argon/
 2. upload semua isi folder argon diatas ke /www/luci-static/argon/
