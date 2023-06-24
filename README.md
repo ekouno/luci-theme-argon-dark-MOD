@@ -11,3 +11,4 @@ note: saya menggunakan firmware dari REYRE dan utak atik secara manual
 
 ## Screenshots
 ![desktop](/Screenshots/screenshot_pc.jpg)
+![mobile](/Screenshots/screenshot_phone.jpg)
