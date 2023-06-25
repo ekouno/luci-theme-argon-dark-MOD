@@ -39,7 +39,7 @@ render: function(data)
 var fields=[
 _('Model'),"S905X B860H v1",
 _('Firmware Version'),(L.isObject(boardinfo.release)?boardinfo.release.description+'  ':'')+(luciversion||''),
-_('Kernel Version'),"5.4.204",
+_('Kernel Version'),boardinfo.kernel,
 _('Local Time'),datestr,
 _('Uptime'),systeminfo.uptime?'%t'.format(systeminfo.uptime):null,
 _("Temperature"), tempcpu,
