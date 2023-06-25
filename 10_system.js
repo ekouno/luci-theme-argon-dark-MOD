@@ -46,9 +46,9 @@ _("Temperature"), tempcpu,
 _("CPU Usage"), cpuusage,
 _("Openclash"), _clash,
 _("Zerotier"), zerotier_status,
-_("ip"), ip,
-_("host"), isp,
-_("lokasi"), address,	
+_("IP"), ip,
+_("Host"), isp,
+_("Location"), address,	
 
 ];
 
