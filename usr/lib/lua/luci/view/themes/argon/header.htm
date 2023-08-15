@@ -57,7 +57,24 @@
 -%>
 <!DOCTYPE html>
 <html lang="<%=luci.i18n.context.lang%>">
+<style>
+  /* Existing styles */
+  html {
+    height: 100%;
+  }
 
+  body {
+    margin: 0;
+  }
+
+  .bg {
+    /* Add the following line to set the background image */
+    background-image: url('/www/luci-static/argon/css/backgroundfanspage.png');
+    /* Rest of the existing styles */
+  }
+
+  /* Rest of the existing styles */
+</style>
 <head>
 	<meta charset="utf-8">
 
@@ -135,7 +152,66 @@
 <body
 	class="lang_<%=luci.i18n.context.lang%> <% if node then %><%= striptags( node.title ) %><% end %> <% if luci.dispatcher.context.authsession then %>logged-in<% end %>"
 	data-page="<%= table.concat(disp.context.requestpath, "-") %>">
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
 
+<style>
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, darkslategray 50%, black 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+</style>
 <header>
 	<div class="fill">
 		<div class="container">
