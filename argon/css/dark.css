@@ -41,6 +41,7 @@ header::after {
   background-color: #0000009a !important;
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.15);
   border-radius: 10px;
+  margin-left: 15px;
 }
 .main .main-left .sidenav-header .brand {
   color: #cccccc;
@@ -49,19 +50,19 @@ header::after {
   color: #cccccc;
 }
 .main .main-left .nav .slide .slide-menu .active a::after {
-  background-color: #cccccc !important;
+  background-color: white !important;
 }
 .main .main-left .nav .slide .slide-menu .active::after {
-  background-color: var(--dark-primary) !important;
+  background-color: darkcyan !important;
 }
 .main .main-left .nav .slide .slide-menu li a {
-  color: #cccccc;
+  color: white;
 }
 .main .main-left .nav .slide .slide-menu li a:hover {
   background: none !important;
 }
 .main .main-left .nav .slide .slide-menu li::after {
-  background-color: var(--dark-primary) !important;
+  background-color: cyan !important;
 }
 .main .main-left .nav .slide .menu.active {
   background-color: #483d8b !important;
@@ -72,7 +73,7 @@ header::after {
   background-color: #ffffff !important;
 }
 .main .main-left .nav li a {
-  color: #cccccc !important;
+  color: white !important;
 }
 .main .main-left .nav li a:hover {
   background-color: #483d8b !important;
@@ -224,7 +225,7 @@ h3 {
   background: #0000009a;
 }
 h4 {
-  background-color: #1e1e1f;
+  background-color: #0000009a;
 }
 .cbi-progressbar {
   background: #0000009a;
@@ -254,8 +255,8 @@ div > .table > .tbody > .tr:nth-of-type(2n) {
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.35);
 }
 #syslog {
-  color: #ccc;
-  background-color: #1e1e1e;
+  color: white;
+  background-color: #0000009a;
 }
 #iwsvg,
 #iwsvg2,
@@ -295,18 +296,18 @@ div > .table > .tbody > .tr:nth-of-type(2n) {
   color: #ccc;
 }
 .cbi-tabmenu > li {
-  background: #2d2d2d;
+  background: #2d2d2d9a;
 }
 .cbi-tabmenu li[class~="cbi-tab"] a {
   color: #ccc;
 }
 .cbi-tabmenu > li:hover {
   color: #ccc;
-  background: #2d2d2d;
+  background: #2d2d2d9a;
   border-bottom: 0.18751rem solid var(--dark-primary) !important;
 }
 .cbi-tabmenu > li[class~="cbi-tab"] {
-  background-color: #181819;
+  background-color: #1818199a;
   border-bottom: 0.18751rem solid var(--dark-primary) !important;
 }
 .cbi-tabcontainer > .cbi-value:nth-of-type(2n) {
@@ -365,7 +366,7 @@ textarea:focus-visible {
 }
 .cbi-section-remove:nth-of-type(2n),
 .cbi-section-node:nth-of-type(2n) {
-  background-color: #1e1e1e;
+  background-color: #0000009a;
 }
 .node-system-packages > .main table tr td:nth-last-child(1) {
   color: #ccc;
@@ -476,11 +477,12 @@ fieldset[id^="cbi-apply-"] {
   background: #252525;
 }
 .ifacebox-head.active {
-  background-color: var(--dark-primary) !important;
+  background-color: #0000009a;
 }
 header .fill .status span[data-style="active"] {
-  color: #ccc !important;
-  background-color: darkolivegreen !important;
+  color: white !important;
+  background-color: darkcyan !important;
+  margin: 40px;
 }
 #cbi-wireless .td,
 #cbi-network .tr:first-child > .td,
@@ -498,8 +500,8 @@ header .fill .status span[data-style="active"] {
 td > .ifacebadge,
 .td > .ifacebadge {
   color: #fff;
-  background-color: #483d8b;
-  background-color: var(--dark-primary);
+
+  background-color: #0000009a;
   border: 0;
 }
 .btn.danger,
@@ -570,7 +572,7 @@ input,
   background-color: transparent; !important;
 }
 .modal {
-  background-color: #1e1e1e;
+  background-color: #0000009a;
 }
 .cbi-button-positive {
   color: #fff !important;
@@ -607,7 +609,7 @@ input,
   outline: none;
 }
 .ifacebadge {
-  background-color: #333333;
+  background-color: #3333339a;
 }
 .cbi-dynlist > .item > span {
   border: 1px solid #3c3c3c !important;
@@ -622,8 +624,8 @@ input,
 .cbi-button[value="Upload"],
 .cbi-button[value$="Apply"],
 .cbi-button[onclick="addKey(event)"] {
-  background: #483d8b !important;
-  background: var(--dark-primary) !important;
+  background: darkcyan !important;
+
   border-color: var(--dark-primary) !important;
 }
 .btn.primary,
@@ -654,7 +656,7 @@ input,
 [data-page="admin-status-routes"] #view p textarea,
 [data-page="admin-system-crontab"] #view p textarea {
   color: #ccc;
-  background-color: #252526;
+  background-color: #0000009a;
 }
 #view > .spinning {
   background: #333333 !important;
