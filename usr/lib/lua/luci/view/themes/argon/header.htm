@@ -57,24 +57,7 @@
 -%>
 <!DOCTYPE html>
 <html lang="<%=luci.i18n.context.lang%>">
-<style>
-  /* Existing styles */
-  html {
-    height: 100%;
-  }
 
-  body {
-    margin: 0;
-  }
-
-  .bg {
-    /* Add the following line to set the background image */
-    background-image: url('/www/luci-static/argon/css/backgroundfanspage.png');
-    /* Rest of the existing styles */
-  }
-
-  /* Rest of the existing styles */
-</style>
 <head>
 	<meta charset="utf-8">
 
@@ -167,7 +150,7 @@ body {
 
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, darkslategray 50%, black 50%);
+  background-image: linear-gradient(60deg, darkslategray 50%, #333333 50%);
   bottom:0;
   left:-50%;
   opacity:.5;
