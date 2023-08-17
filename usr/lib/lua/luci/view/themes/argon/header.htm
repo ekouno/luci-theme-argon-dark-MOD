@@ -59,8 +59,55 @@
 <html lang="<%=luci.i18n.context.lang%>">
 
 <head>
-	<meta charset="utf-8">
+    <style>
+        header {
+            background-color: transparent;
+            color: #fff;
+            padding: 20px;
+        }
 
+        .box {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            margin: 0 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 6px 3px #00ffff9a;
+        }
+        .box img {
+            display: block;
+            margin: auto; /* Memposisikan gambar di tengah secara horizontal dan vertikal */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: filter 0.2s ease-in-out; /* Transisi saat hover */
+        }
+
+        .box:hover img {
+            filter: drop-shadow(0 0 5px cyan); /* Efek bayangan saat hover */
+        }
+        .box i {
+            z-index: 5;
+            font-size: 45px;
+            color: #fff;
+        }
+
+        .box-area {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+    </style>
+
+	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 	<meta name="format-detection" content="telephone=no, email=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -135,64 +182,95 @@
 <body
 	class="lang_<%=luci.i18n.context.lang%> <% if node then %><%= striptags( node.title ) %><% end %> <% if luci.dispatcher.context.authsession then %>logged-in<% end %>"
 	data-page="<%= table.concat(disp.context.requestpath, "-") %>">
-<div class="bg"></div>
-<div class="bg bg2"></div>
-<div class="bg bg3"></div>
+<div class="wrapper">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+</div>
 
 <style>
-html {
-  height:100%;
-}
-
 body {
-  margin:0;
+	background: #111;
+	height: 100vh;
+}
+.wrapper span {
+	position: fixed;
+	bottom: -180px;
+	height: 50px;
+	width: 50px;
+	z-index: -1;
+	background-color: #18191f;
+	box-shadow: 0 0 50px cyan, 0 0 100px cyan, 0 0 150px cyan, 0 0 200px cyan;
+	animation: animate 8s linear infinite;
 }
 
-.bg {
-  animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(60deg, darkslategray 50%, #333333 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
+.wrapper span:nth-child(1) {
+	left: 60px;
+	animation-delay: 0.6s;
 }
-
-.bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:4s;
+.wrapper span:nth-child(2) {
+	left: 10%;
+	animation-delay: 3s;
+	width: 60px;
+	height: 60px;
 }
-
-.bg3 {
-  animation-duration:5s;
+.wrapper span:nth-child(3) {
+	left: 20%;
+	animation-delay: 2s;
 }
-
-.content {
-  background-color:rgba(255,255,255,.8);
-  border-radius:.25em;
-  box-shadow:0 0 .25em rgba(0,0,0,.25);
-  box-sizing:border-box;
-  left:50%;
-  padding:10vmin;
-  position:fixed;
-  text-align:center;
-  top:50%;
-  transform:translate(-50%, -50%);
+.wrapper span:nth-child(4) {
+	left: 30%;
+	animation-delay: 5s;
+	width: 80px;
+	height: 80px;
 }
-
-h1 {
-  font-family:monospace;
+.wrapper span:nth-child(5) {
+	left: 40%;
+	animation-delay: 1s;
 }
-
-@keyframes slide {
-  0% {
-    transform:translateX(-25%);
-  }
-  100% {
-    transform:translateX(25%);
-  }
+.wrapper span:nth-child(6) {
+	left: 50%;
+	animation-delay: 7s;
+}
+.wrapper span:nth-child(7) {
+	left: 60%;
+	animation-delay: 6s;
+	width: 100px;
+	height: 100px;
+}
+.wrapper span:nth-child(8) {
+	left: 70%;
+	animation-delay: 8s;
+}
+.wrapper span:nth-child(9) {
+	left: 80%;
+	animation-delay: 6s;
+	width: 90px;
+	height: 90px;
+}
+.wrapper span:nth-child(10) {
+	left: 90%;
+	animation-delay: 4s;
+}
+@keyframes animate {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	80% {
+		opacity: .7;
+	}
+	100% {
+		transform: translateY(-800px) rotate(360deg);
+		opacity: 0;
+	}
 }
 </style>
 <header>
@@ -200,45 +278,31 @@ h1 {
 		<div class="container">
 			<a class="showSide"></span>
 		<a id="logo" href="<% if luci.dispatcher.context.authsession then %><%=url('admin/status/overview')%><% else %>#<% end %>"><img src="<%=media%>/brand.png" alt="OpenWrt"></a>
-			<tr>		
-    <td><a id="oc" href='/cgi-bin/luci/admin/services/openclash'><img src="<%=media%>/navbar/clash.gif" width="35" height="35"></a></td>
-	<td><a href='/cgi-bin/luci/admin/system/tinyfm'><img src="<%=media%>/navbar/tinyfm.gif" width="35" height="35"></a></td>
-	<td><a href='/cgi-bin/luci/admin/status/realtime'><img src="<%=media%>/navbar/netmon.gif" width="35" height="35"></a></td>
-	<td><a href='/cgi-bin/luci/admin/services/ttyd'><img src="<%=media%>/navbar/terminal.gif" width="35" height="35"></a></td>
-    <td><li><a href='http://192.168.8.1/' target='_blank'><img src="<%=media%>/navbar/modem.gif" width="35" height="35"></a></td></li>
-    <td><li><a id="yacd" target='_blank'><img src="<%=media%>/navbar/yacd.gif" width="35" height="35"></a></td></li>
-    <td><a href='/cgi-bin/luci/admin/network/network'><img src="<%=media%>/navbar/interface.gif" width="35" height="35"></a></td>
+			<tr>
+        <div class="box-area">
+            <div class="box">
+                <a id="oc" href='/cgi-bin/luci/admin/services/openclash'><img src="<%=media%>/navbar/clash.gif" width="35" height="35"></a>
+            </div>
+            <div class="box">
+                <a id="yacd" target='_blank'><img src="<%=media%>/navbar/yacd.gif" width="35" height="35"></a>
+            </div>
+            <div class="box">
+                <a href='/cgi-bin/luci/admin/system/tinyfm'><img src="<%=media%>/navbar/tinyfm.gif" width="35" height="35"></a>
+            </div>
+            <div class="box">
+                <a href='/cgi-bin/luci/admin/status/realtime'><img src="<%=media%>/navbar/netmon.gif" width="35" height="35"></a>
+            </div>
+            <div class="box">
+                <a href='/cgi-bin/luci/admin/services/ttyd'><img src="<%=media%>/navbar/terminal.gif" width="35" height="35"></a>
+            </div>
+            <div class="box">
+                <a href='http://192.168.8.1/' target='_blank'><img src="<%=media%>/navbar/modem.gif" width="35" height="35"></a>
+            </div>
+            <div class="box">
+                <a href='/cgi-bin/luci/admin/network/network'><img src="<%=media%>/navbar/interface.gif" width="35" height="35"></a>
+            </div>
+        </div>
 
-	<script type="text/javascript">document.getElementById("yacd").setAttribute("href", "http://" + window.location.hostname + ":9090/ui/yacd/",);</script>
-            </tr>
-			<span class="status" id="indicators"></span>
-		</div>
-	</div>
-<style>
-    #oc{padding-left: 15px;}
-    #menu{background: linear-gradient(90deg, #002b49, #002b49, #ffffff); color: #fff; height: 17px; padding-left: 0px; border-radius: 0;}
-    #menu li, #menu ul{margin: 0 auto; padding: 0; list-style: none;}
-    #menu ul{width: 100%;}#menu li{float: left; display: inline; position: relative;}
-    #menu a{display: block; line-height: 15px; padding: 0 5px; text-decoration: none; color: #fff; font-size: 12px;}
-    #menu a.dropdown-arrow:after{content: "\25BE"; margin-left: 5px;}
-    #menu li a:hover{color: #002b49; background: #f2f2f2;}
-    #menu input{display: none; margin: 0; padding: 0; height: 20px; width: 100%; opacity: 0; cursor: pointer;}
-    #menu label{display: none; line-height: 20px; text-align: center; position: absolute; left: 35px;}
-    #menu label:before{font-size: 1.6em; content: "\2261"; margin-left: 20px;}
-    #menu ul.sub-menus{height: auto; overflow: hidden; width: 170px; background: #f2f2f2; position: absolute; z-index: 99; display: none;}
-    #menu ul.sub-menus li{display: block; width: 100%;}
-    #menu ul.sub-menus a{color: #fff; font-size: 12px;}
-    #menu li:hover ul.sub-menus{display: block;}
-    #menu ul.sub-menus a:hover{background: #f2f2f2; color: #002b49;}@media screen and (max-width: 200px){#menu{position: relative;}
-    #menu ul{background: #111; position: absolute; top: 100%; right: 0; left: 0; z-index: 3; height: auto; display: none;}
-    #menu ul.sub-menus{width: 100%; position: static;}
-    #menu ul.sub-menus a{padding-left: 30px;}
-    #menu li{display: block; float: none; width: auto;}#menu input, #menu label{position: absolute; top: 0; left: 0; display: block;}
-    #menu input{z-index: 4;}
-    #menu input:checked + label{color: #fff;}
-    #menu input:checked + label:before{content: "\00d7";}
-    #menu input:checked ~ ul{display: block;}}
-</style>
 <script>
 function updatemenu(){1==document.getElementById("responsive-menu").checked?(document.getElementById("menu").style.borderBottomRightRadius="0",document.getElementById("menu").style.borderBottomLeftRadius="0"):document.getElementById("menu").style.borderRadius="0px"}
 </script>
