@@ -4,5 +4,6 @@
 
 
 ## Screenshots
-![desktop](/Screenshots/luci-theme-argon.mp4)
-![mobile](/Screenshots/screenshot_phone.jpg)
+![desktop]
+https://github.com/ekouno/luci-theme-argon-dark-MOD/assets/93620578/347fb2d3-1dfd-41b9-995d-4361fa019c22
+
