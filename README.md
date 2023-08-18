@@ -4,5 +4,5 @@
 
 
 ## Screenshots
-![desktop](/Screenshots/screenshot_pc.jpg)
+![desktop](/Screenshots/luci-theme-argon.mp4)
 ![mobile](/Screenshots/screenshot_phone.jpg)
